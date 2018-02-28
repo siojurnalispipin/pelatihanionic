@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { KalkulatorPage } from './../pages/kalkulator/kalkulator';
+import { KalkulatordilanPage } from './../pages/kalkulatordilan/kalkulatordilan';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +17,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    KalkulatorPage
+    KalkulatorPage,
+    KalkulatordilanPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    KalkulatorPage
+    KalkulatorPage,
+    KalkulatordilanPage
+
   ],
   providers: [
     StatusBar,
