@@ -1,18 +1,60 @@
-<!--
-  Generated template for the KalkulatorPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>kalkulator</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Persentase uang</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-card *ngIf="tipAmount">
+    <ion-card-content>
+      <ion-card-title text-center>
+        Total
+      </ion-card-title>
+      <h1 text-center class="tip amount">
+          <ion-icon ios="logo-usd" md="logo-usd"></ion-icon>
+        {{tipAmount}}
+      </h1>
+    </ion-card-content>
+  </ion-card>
+  <form #f="ngForm">
+    <ion-list>
+      <ion-item class="padding">
+        <ion-input class="amount" type="number" placeholder="Enter bill amount" name="amount" [(ngModel)]="amount" min=0 ngModel></ion-input>
+        <ion-icon ios="logo-usd" md="logo-usd" item-left></ion-icon>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left color="danger" (click)="percnetage(5)">
+              <ion-icon name="sad"></ion-icon>
+              5%</button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button icon-left color="warning" (click)="percnetage(10)">
+              <ion-icon name="outlet" icon-left></ion-icon>
+              10%</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left color="secondary" (click)="percnetage(15)">
+              <ion-icon name="happy" icon-left></ion-icon>
+              15%</button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+            <ion-label>Berapa %</ion-label>
+            <ion-input class="amount" type="number" placeholder="Persentase lainnya" name="otherPercentage" [(ngModel)]="tipValue" (keyup)="percnetage(tipValue)" min=0></ion-input>
+          </ion-item>
+          <ion-row>
+            <ion-col>
+              <button ion-button round block (click)="clear()">Hitung ulang</button>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-list>
+  </form>
 
 </ion-content>

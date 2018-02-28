@@ -1,3 +1,11 @@
 page-kalkulator {
-
+    .amount {
+        color: color($colors, secondary);
+    }
+    .tip{
+        font-size: 50px;
+    }
+    .padding{
+        padding: 30px 5px 30px 5px;
+    }
 }

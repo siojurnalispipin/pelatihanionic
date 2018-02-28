@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
 
-/**
- * Generated class for the KalkulatorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +9,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'kalkulator.html',
 })
 export class KalkulatorPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @ViewChild('f') tipForm: NgForm;
+  amount: number;
+  tipAmount: number;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad KalkulatorPage');
+  percnetage(input:number){
+    this.tipAmount = (this.amount*input)/100;
+  }
+
+  clear(){
+    this.tipForm.reset();
+    this.tipAmount = 0;
   }
 
 }
